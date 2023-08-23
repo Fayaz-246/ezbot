@@ -2,12 +2,10 @@ const fs = require("fs");
 const chalk = require("chalk");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
-const ascii = require("ascii-table");
 require("dotenv").config();
 module.exports = (client) => {
   client.handleCommands = async () => {
     const { commands, commandArray } = client;
-    const table = new ascii().setHeading("Command", "Status");
     const commandFolders = fs.readdirSync(`./src/commands`);
     for (const folder of commandFolders) {
       const commandFiles = fs
@@ -15,18 +13,19 @@ module.exports = (client) => {
         .filter((file) => file.endsWith(".js"));
 
       for (const file of commandFiles) {
-        //console.log(file)
         const command = require(`../../commands/${folder}/${file}`);
         if ("data" in command && "execute" in command) {
           commands.set(command.data.name, command);
           commandArray.push(command.data.toJSON());
-          table.addRow(`${command.data.name}`, "✅");
         } else {
-          table.addRow(`${file}`, "❌");
+          console.log(
+            `${chalk.yellow(
+              "[WARNING]"
+            )} ${file} is missing "data" or "execute"`
+          );
         }
       }
     }
-    console.log(table.toString());
     const clientId = "1126571121580445726";
     const rest = new REST({ version: "9" }).setToken(process.env.token);
 
@@ -34,7 +33,7 @@ module.exports = (client) => {
       try {
         console.log(
           chalk.red(
-            `Started refreshing ${commandArray.length} application (/) commands.`
+            `[CLIENT] Started refreshing ${commandArray.length} application (/) commands.`
           )
         );
 
@@ -45,7 +44,7 @@ module.exports = (client) => {
 
         console.log(
           chalk.green(
-            `Successfully reloaded ${commandArray.length} application (/) commands.`
+            `[CLIENT] Successfully reloaded ${commandArray.length} application (/) commands.`
           )
         );
       } catch (error) {

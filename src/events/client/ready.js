@@ -17,8 +17,9 @@ module.exports = {
     });
     console.log(
       chalk.blue(
-        `Bot has logged in with the client username ${client.user.tag}!!`
+        `[CLIENT] Bot has logged in with the client username ${client.user.tag}!!`
       )
     );
+    client.web();
   },
 };
