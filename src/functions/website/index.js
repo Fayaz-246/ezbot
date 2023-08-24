@@ -67,6 +67,14 @@ module.exports = async (client) => {
       res.sendFile(path.join(__dirname, "./js", "script.js"));
     });
 
+    app.get("/js/bootstrap.bundle.min.js", async (req, res) => {
+      res.sendFile(path.join(__dirname, "./js", "bootstrap.bundle.min.js"));
+    });
+
+    app.get("/js/addCommandfromClient", async (req, res) => {
+      res.sendFile(path.join(__dirname, "./js", "addCommandfromClient.js"));
+    });
+
     app.get("*", async (req, res) => {
       res.render("404");
     });

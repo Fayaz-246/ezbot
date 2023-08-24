@@ -4,22 +4,22 @@
 	* background, underline
 	 */
   --primary: #1b1b1b;
-  --primary-disabled: #b6b6b6;
+  --primary-disabled: #949494;
   /*
 	* this is secondary color, applied on:
 	* text, border
 	*/
   --secondary: rgb(255, 255, 255);
-  --secondary-disabled: #fffff;
+  --secondary-disabled: rgb(255, 255, 255);
   /*
 	* this is third color, applied on:
 	* button, 
 	*/
   --third: hsl(293, 100%, 57%);
-  --third-disabled: #09ff00;
+  --third-disabled: hwb(293 17% 43%);
   /*
 	* other colors, used on random object.
 	*/
   --o1: #c7c7c7;
-  --o1-disabled: hwb(0 100% 0%);
+  --o1-disabled: hwb(223 22% 72%);
 }

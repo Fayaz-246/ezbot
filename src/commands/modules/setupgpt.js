@@ -8,9 +8,7 @@ const aiSchema = require("../../models/chatbot");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("chatbot")
-    .setDescription(
-      "Add a chat-bot to the desired channel! Uses OPEN-AI ChatGPT"
-    )
+    .setDescription("Add a chat-bot to the desired channel!")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addSubcommand((sub) =>
       sub

@@ -10,7 +10,7 @@ const {
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("button")
-    .setDescription("Button is button don't question it."),
+    .setDescription("Button test."),
   async execute(interaction) {
     const btn = new ButtonBuilder()
       .setCustomId("test")
