@@ -35,7 +35,7 @@ module.exports = {
       new ButtonBuilder()
         .setLabel("Support Server")
         .setStyle(ButtonStyle.Link)
-        .setURL("https://discord.gg/CaB8wcrtcR"),
+        .setURL("https://discord.gg/r297V5ZScD"),
 
       new ButtonBuilder()
         .setLabel("Invite The Bot")

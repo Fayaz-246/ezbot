@@ -20,4 +20,4 @@ for (const folder of commandFolders) {
   }
 }
 
-module.exports = array;
+module.exports = { array };

@@ -72,7 +72,7 @@ module.exports = async (client) => {
     });
 
     app.get("/js/addCommandfromClient", async (req, res) => {
-      res.sendFile(path.join(__dirname, "./js", "addCommandfromClient.js"));
+      res.sendFile(path.join(__dirname, "./js/dist", "acfc.js"));
     });
 
     app.get("*", async (req, res) => {

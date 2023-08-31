@@ -33,7 +33,7 @@ module.exports = (client) => {
       try {
         console.log(
           chalk.red(
-            `[CLIENT] Started refreshing ${commandArray.length} application (/) commands.`
+            `[Client] Started refreshing ${commandArray.length} application (/) commands.`
           )
         );
 
@@ -44,7 +44,7 @@ module.exports = (client) => {
 
         console.log(
           chalk.green(
-            `[CLIENT] Successfully reloaded ${commandArray.length} application (/) commands.`
+            `[Client] Successfully reloaded ${commandArray.length} application (/) commands.`
           )
         );
       } catch (error) {
